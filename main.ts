@@ -18,11 +18,11 @@ basic.forever(function () {
         sos += 0.2
     } else if (distance >= 50 && availability == 2) {
         radio.sendValue("Flushing", 2)
-        robotbit.Servo(robotbit.Servos.S1, 180)
+        robotbit.Servo(robotbit.Servos.S1, 0)
         availability = 1
         sos = 0
         basic.pause(1000)
-        robotbit.Servo(robotbit.Servos.S1, 0)
+        robotbit.Servo(robotbit.Servos.S1, 180)
     } else if (distance >= 50) {
         radio.sendValue("Available", 1)
         sos = 0
