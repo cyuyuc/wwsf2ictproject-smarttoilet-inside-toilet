@@ -15,7 +15,7 @@ basic.forever(function () {
     if (distance <= 90) {
         radio.sendValue("Unavailable", 3)
         availability = 2
-        sos += 1
+        sos += 0.5
     } else if (distance >= 90 && availability == 2) {
         radio.sendValue("Flushing", 2)
         robotbit.Servo(robotbit.Servos.S1, 90)
@@ -30,7 +30,7 @@ basic.forever(function () {
     } else {
         radio.sendValue("Error", 4)
     }
-    if (sos >= 10) {
+    if (sos >= 20) {
         radio.sendNumber(999)
     } else {
         radio.sendNumber(Environment.ReadDust(DigitalPin.P16, AnalogPin.P1))
